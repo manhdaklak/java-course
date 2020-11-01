@@ -28,7 +28,7 @@ public class GD_DangNhap extends JFrame{
 	private JPasswordField txt_PassWord;
 
 	/**
-	 * Launch the application.
+	 * Launch the application. nnnnn
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
