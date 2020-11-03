@@ -16,6 +16,10 @@ import com.toedter.calendar.JDateChooser;
 
 public class GD_Main extends JFrame {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3612902112627409790L;
 	DefaultTableModel defaultTableModel;
 	private JPanel panel_TrangChu,panel_NCC,panel_KhachHang,panel_NhapBangDia,panel_BangDia,panel_NhanVien,panel_ThueBangDia,panel_TraBangDia,panel_ThongKe;
 	
@@ -81,7 +85,7 @@ public class GD_Main extends JFrame {
 	public GD_Main() {
 		setTitle("Quản Lý Băng Đĩa");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(20, 20, 1500, 800);
+		setBounds(0, 0, 1500, 700);
 
 		//Menu menubar
 		JMenuBar menuBar = new JMenuBar();
@@ -89,7 +93,7 @@ public class GD_Main extends JFrame {
 		menuBar.setFont(new Font("Times New Roman", Font.BOLD, 25));
 		
 		JMenuItem mnNCC = new JMenuItem("Nhà Cung Cấp");
-		mnNCC.setIcon(new ImageIcon("src/images/nhacungcap.jpg"));
+		mnNCC.setIcon(new ImageIcon("src/images/inTK.jpg"));
 		mnNCC.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 		mnNCC.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM); 
 		mnNCC.addActionListener(new ActionListener() {
@@ -109,7 +113,7 @@ public class GD_Main extends JFrame {
 		menuBar.add(mnNCC);
 		
 		JMenuItem mnKhachHang = new JMenuItem("  Khách Hàng  ");
-		mnKhachHang.setIcon(new ImageIcon("src/images/khachhang.png"));
+		mnKhachHang.setIcon(new ImageIcon("src/images/community.png"));
 		mnKhachHang.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 		mnKhachHang.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 		mnKhachHang.addActionListener(new ActionListener() {
@@ -128,7 +132,7 @@ public class GD_Main extends JFrame {
 		menuBar.add(mnKhachHang);
 		
 		JMenuItem mnNhapBangDia = new JMenuItem("Nhập Băng Đĩa");
-		mnNhapBangDia.setIcon(new ImageIcon("src/images/Apps-basket-icon.png"));
+		mnNhapBangDia.setIcon(new ImageIcon("src/images/inTK.png"));
 		mnNhapBangDia.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 		mnNhapBangDia.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 		mnNhapBangDia.addActionListener(new ActionListener() {
@@ -147,7 +151,7 @@ public class GD_Main extends JFrame {
 		menuBar.add(mnNhapBangDia);
 		
 		JMenuItem mnBangDia = new JMenuItem("       Băng Đĩa      ");
-		mnBangDia.setIcon(new ImageIcon("src/images/shipping-box-icon.png"));
+		mnBangDia.setIcon(new ImageIcon("src/images/inTK.png"));
 		mnBangDia.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 		mnBangDia.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM); 
 		mnBangDia.addActionListener(new ActionListener() {
@@ -166,7 +170,7 @@ public class GD_Main extends JFrame {
 		menuBar.add(mnBangDia);
 		
 		JMenuItem mnThueBangDia = new JMenuItem("Thuê Băng Đĩa");
-		mnThueBangDia.setIcon(new ImageIcon("src/images/basket-icon.png"));
+		mnThueBangDia.setIcon(new ImageIcon("src/images/add-to-cart.png"));
 		mnThueBangDia.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 		mnThueBangDia.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);   
 		mnThueBangDia.addActionListener(new ActionListener() {
@@ -185,7 +189,7 @@ public class GD_Main extends JFrame {
 		menuBar.add(mnThueBangDia);
 		
 		JMenuItem mnTraBangDia = new JMenuItem("  Trả Băng Đĩa  ");
-		mnTraBangDia.setIcon(new ImageIcon("src/images/App-wood-box-icon.png"));
+		mnTraBangDia.setIcon(new ImageIcon("src/images/inTK.png"));
 		mnTraBangDia.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 		mnTraBangDia.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);  
 		mnTraBangDia.addActionListener(new ActionListener() {
@@ -204,7 +208,7 @@ public class GD_Main extends JFrame {
 		menuBar.add(mnTraBangDia);
 		
 		JMenuItem mnThongKe = new JMenuItem("    Thống Kê    ");
-		mnThongKe.setIcon(new ImageIcon("src/images/Column-Chart-icon.png"));
+		mnThongKe.setIcon(new ImageIcon("src/images/inTK.png"));
 		mnThongKe.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 		mnThongKe.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);   
 		mnThongKe.addActionListener(new ActionListener() {
@@ -223,7 +227,7 @@ public class GD_Main extends JFrame {
 		menuBar.add(mnThongKe);
 		
 		JMenuItem mnNhanVien = new JMenuItem("   Nhân Viên  ");
-		mnNhanVien.setIcon(new ImageIcon("src/images/Actions-user-group-properties-icon.png"));
+		mnNhanVien.setIcon(new ImageIcon("src/images/inTK.png"));
 		mnNhanVien.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 		mnNhanVien.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);   
 		mnNhanVien.addActionListener(new ActionListener() {
@@ -245,7 +249,7 @@ public class GD_Main extends JFrame {
 		menuBar.add(mnan);
 		
 		JMenuItem mnDoiMatKhau = new JMenuItem("  Đổi Mật Khẩu  ");
-		mnDoiMatKhau.setIcon(new ImageIcon("src/images/Apps-preferences-desktop-user-password-icon.png"));
+		mnDoiMatKhau.setIcon(new ImageIcon("src/images/inTK.png"));
 		mnDoiMatKhau.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 		mnDoiMatKhau.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 		mnDoiMatKhau.addActionListener(new ActionListener() {
@@ -264,7 +268,7 @@ public class GD_Main extends JFrame {
 		menuBar.add(mnDoiMatKhau);
 		
 		JMenuItem mnDangXuat = new JMenuItem("    Đăng Xuất    ");
-		mnDangXuat.setIcon(new ImageIcon("src/images/logout-icon.png"));
+		mnDangXuat.setIcon(new ImageIcon("src/images/inTK.png"));
 		mnDangXuat.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 		mnDangXuat.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM); 
 		mnDangXuat.addActionListener(new ActionListener() {
@@ -277,7 +281,7 @@ public class GD_Main extends JFrame {
 		menuBar.add(mnDangXuat);
 		
 		JMenuItem mnDong = new JMenuItem("   Đóng");
-		mnDong.setIcon(new ImageIcon("src/images/Actions-window-close-icon.png"));
+		mnDong.setIcon(new ImageIcon("src/images/inTK.png"));
 		mnDong.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 		mnDong.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 		
@@ -300,7 +304,7 @@ public class GD_Main extends JFrame {
 		
 		JLabel lblTrangChu = new JLabel("");
 		lblTrangChu.setIcon(new ImageIcon("src/images/ptud1.jpg"));
-		lblTrangChu.setBounds(0, 0, 1500, 800);
+		lblTrangChu.setBounds(0, 0, 1500, 700);
 		panel_TrangChu.add(lblTrangChu);
         
         /*------------------------PANEL NHÀ CUNG CẤP-----------------------------*/
@@ -381,7 +385,7 @@ public class GD_Main extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		btn_Them_NCC.setBounds(100, 420, 150, 40);
+		btn_Them_NCC.setBounds(100, 420, 110, 40);
 		panel_NCC.add(btn_Them_NCC);
 		
 		JButton btn_Sua_NCC = new JButton(" Chỉnh Sửa");
@@ -391,7 +395,7 @@ public class GD_Main extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		btn_Sua_NCC.setBounds(100, 480, 150, 40);
+		btn_Sua_NCC.setBounds(100, 480, 140, 40);
 		panel_NCC.add(btn_Sua_NCC);
 		
 		JButton btn_Xoa_NCC = new JButton(" Xóa");
@@ -401,7 +405,7 @@ public class GD_Main extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		btn_Xoa_NCC.setBounds(280, 420, 150, 40);
+		btn_Xoa_NCC.setBounds(240, 420, 110, 40);
 		panel_NCC.add(btn_Xoa_NCC);
 		
 		JButton btn_XoaTrang_NCC = new JButton(" Làm Mới");
@@ -433,7 +437,7 @@ public class GD_Main extends JFrame {
 				}
 			}
 		});
-		btn_Thoat_NCC.setBounds(200, 540, 150, 40);
+		btn_Thoat_NCC.setBounds(400, 420, 110, 40);
 		panel_NCC.add(btn_Thoat_NCC);
 		
 		JLabel lbl_timkiem_NCC = new JLabel("Tìm kiếm:");
@@ -458,7 +462,7 @@ public class GD_Main extends JFrame {
 		panel_NCC.add(btn_TimKiem_NCC);
 		
 		JScrollPane scrollPane_NCC = new JScrollPane();
-		scrollPane_NCC.setBounds(650, 100, 800, 500);
+		scrollPane_NCC.setBounds(650, 100, 680, 470);
 		panel_NCC.add(scrollPane_NCC);
 		
 		
@@ -474,85 +478,98 @@ public class GD_Main extends JFrame {
 		panel_KhachHang.add(lblKhachHang);
 		
 			
-		JLabel lbl_MaKH_KH = new JLabel("Mã khách hàng: ");
-		lbl_MaKH_KH.setFont(new Font("Times New Roman", Font.BOLD, 16));
-		lbl_MaKH_KH.setBounds(20, 50, 130, 20);
-		panel_KhachHang.add(lbl_MaKH_KH);
-		
-		txt_MaKH_KhachHang = new JTextField();
-		txt_MaKH_KhachHang.setEnabled(false);
-		txt_MaKH_KhachHang.setBounds(140, 50, 400, 25);
-		panel_KhachHang.add(txt_MaKH_KhachHang);
-		txt_MaKH_KhachHang.setColumns(10);
+//		JLabel lbl_MaKH_KH = new JLabel("Mã khách hàng: ");
+//		lbl_MaKH_KH.setFont(new Font("Times New Roman", Font.BOLD, 16));
+//		lbl_MaKH_KH.setBounds(20, 50, 130, 20);
+//		panel_KhachHang.add(lbl_MaKH_KH);
+//		
+//		txt_MaKH_KhachHang = new JTextField();
+//		txt_MaKH_KhachHang.setEnabled(false);
+//		txt_MaKH_KhachHang.setBounds(140, 50, 400, 25);
+//		panel_KhachHang.add(txt_MaKH_KhachHang);
+//		txt_MaKH_KhachHang.setColumns(10);
+		int a =20, b =50,c=130, d=20;
+		int x= 140, y=50 , h = 400, w =25;
 		
 		JLabel lbl_TenKH_KH = new JLabel("Tên khách hàng: ");
 		lbl_TenKH_KH.setFont(new Font("Times New Roman", Font.BOLD, 16));
-		lbl_TenKH_KH.setBounds(20, 100, 130, 20);
+		lbl_TenKH_KH.setBounds(a, b, c, d);
 		panel_KhachHang.add(lbl_TenKH_KH);
 		
 		txt_TenKH_KhachHang = new JTextField();
-		txt_TenKH_KhachHang.setBounds(140, 100, 400, 25);
+		txt_TenKH_KhachHang.setBounds(x, y, h, w);
 		panel_KhachHang.add(txt_TenKH_KhachHang);
 		txt_TenKH_KhachHang.setColumns(10);
 		
 		JLabel lbl_SCMND_KH = new JLabel("Số CMND: ");
 		lbl_SCMND_KH.setFont(new Font("Times New Roman", Font.BOLD, 16));
-		lbl_SCMND_KH.setBounds(20, 150, 130, 20);
+		b+=50;
+		lbl_SCMND_KH.setBounds(a, b, c, d);
+		
 		panel_KhachHang.add(lbl_SCMND_KH);
 		
 		txt_SCMND_KhachHang = new JTextField();
-		txt_SCMND_KhachHang.setBounds(140, 150, 400, 25);
+		y+=50;
+		txt_SCMND_KhachHang.setBounds(x, y, h, w);
 		panel_KhachHang.add(txt_SCMND_KhachHang);
 		txt_SCMND_KhachHang.setColumns(10);
 		
 		JLabel lbl_SDT_KH = new JLabel("Số điện thoại: ");
 		lbl_SDT_KH.setFont(new Font("Times New Roman", Font.BOLD, 16));
-		lbl_SDT_KH.setBounds(20, 200, 130, 20);
+		b +=50;
+		lbl_SDT_KH.setBounds(a, b, c, d);
 		panel_KhachHang.add(lbl_SDT_KH);
 		
 		txt_SDT_KhachHang = new JTextField();
-		txt_SDT_KhachHang.setBounds(140, 200, 400, 25);
+		y+=50;
+		txt_SDT_KhachHang.setBounds(x, y, h, w);
 		panel_KhachHang.add(txt_SDT_KhachHang);
 		txt_SDT_KhachHang.setColumns(10);
 		
 		JLabel lbl_DiaChi_KH = new JLabel("Địa chỉ: ");
 		lbl_DiaChi_KH.setFont(new Font("Times New Roman", Font.BOLD, 16));
-		lbl_DiaChi_KH.setBounds(20, 250, 130, 20);
+		b+=50;
+		lbl_DiaChi_KH.setBounds(a, b, c, d);
 		panel_KhachHang.add(lbl_DiaChi_KH);
 		
 		txt_DiaChi_KhachHang= new JTextField();
-		txt_DiaChi_KhachHang.setBounds(140, 250, 400, 25);
+		y+=50;
+		txt_DiaChi_KhachHang.setBounds(x, y, h, w);
 		panel_KhachHang.add(txt_DiaChi_KhachHang);
 		txt_DiaChi_KhachHang.setColumns(10);
 		
 		JLabel lbl_Email_KH = new JLabel("Email: ");
 		lbl_Email_KH.setFont(new Font("Times New Roman", Font.BOLD, 16));
-		lbl_Email_KH.setBounds(20, 300, 130, 20);
+		b+=50;
+		lbl_Email_KH.setBounds(a, b, c, d);
 		panel_KhachHang.add(lbl_Email_KH);
 		
 		txt_Email_KhachHang= new JTextField();
-		txt_Email_KhachHang.setBounds(140, 300, 400, 25);
+		y+=50;
+		txt_Email_KhachHang.setBounds(x, y, h, w);
 		panel_KhachHang.add(txt_Email_KhachHang);
 		txt_Email_KhachHang.setColumns(10);
 		
 		
-		JLabel lbl_DiemTL_KH = new JLabel("Diểm tích lũy: ");
-		lbl_DiemTL_KH.setFont(new Font("Times New Roman", Font.BOLD, 16));
-		lbl_DiemTL_KH.setBounds(20, 350, 130, 20);
-		panel_KhachHang.add(lbl_DiemTL_KH);
-		
-		txt_DiemTL_KhachHang= new JTextField();
-		txt_DiemTL_KhachHang.setBounds(140, 350, 400, 25);
-		panel_KhachHang.add(txt_DiemTL_KhachHang);
-		txt_DiemTL_KhachHang.setColumns(10);
+//		JLabel lbl_DiemTL_KH = new JLabel("Diểm tích lũy: ");
+//		lbl_DiemTL_KH.setFont(new Font("Times New Roman", Font.BOLD, 16));
+//		lbl_DiemTL_KH.setBounds(20, 350, 130, 20);
+//		panel_KhachHang.add(lbl_DiemTL_KH);
+//		
+//		txt_DiemTL_KhachHang= new JTextField();
+//		txt_DiemTL_KhachHang.setBounds(140, 350, 400, 25);
+//		panel_KhachHang.add(txt_DiemTL_KhachHang);
+//		txt_DiemTL_KhachHang.setColumns(10);
 		
 		JLabel lbl_GhiChu_KH = new JLabel("Ghi chú: ");
 		lbl_GhiChu_KH.setFont(new Font("Times New Roman", Font.BOLD, 16));
-		lbl_GhiChu_KH.setBounds(20, 400, 130, 20);
+		b+=50;
+		lbl_GhiChu_KH.setBounds(a, b, c, d);
 		panel_KhachHang.add(lbl_GhiChu_KH);
 		
 		txt_GhiChu_KhachHang = new JTextArea();
-		txt_GhiChu_KhachHang.setBounds(140, 400, 400, 80);
+		y+=50;
+		txt_GhiChu_KhachHang.setBounds(x, y, h, 80);
 		panel_KhachHang.add(txt_GhiChu_KhachHang);
         
 		JButton btn_Them_KH = new JButton(" Thêm");
@@ -562,7 +579,7 @@ public class GD_Main extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		btn_Them_KH.setBounds(100, 500, 150, 40);	
+		btn_Them_KH.setBounds(140, 400, 150, 40);	
 		panel_KhachHang.add(btn_Them_KH);
 		
 		JButton btn_Sua_KH = new JButton(" Chỉnh Sửa");
@@ -572,7 +589,7 @@ public class GD_Main extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		btn_Sua_KH.setBounds(100, 560, 150, 40);	
+		btn_Sua_KH.setBounds(140, 460, 150, 40);	
 		panel_KhachHang.add(btn_Sua_KH);
 		
 		JButton btn_Xoa_KH = new JButton(" Xóa");
@@ -582,7 +599,7 @@ public class GD_Main extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		btn_Xoa_KH.setBounds(280, 500, 150, 40);
+		btn_Xoa_KH.setBounds(310, 400, 150, 40);
 		panel_KhachHang.add(btn_Xoa_KH);
 		
 		JButton btn_XoaTrang_KH = new JButton(" Làm Mới");
@@ -592,7 +609,7 @@ public class GD_Main extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		btn_XoaTrang_KH.setBounds(280, 560, 150, 40);
+		btn_XoaTrang_KH.setBounds(310, 460, 150, 40);
 		panel_KhachHang.add(btn_XoaTrang_KH);
 		
 		JButton btn_Thoat_KH= new JButton(" Thoát");
@@ -645,7 +662,7 @@ public class GD_Main extends JFrame {
 		panel_KhachHang.add(btn_TimKiem_KhachHang);
 		
 		JScrollPane scrollPane_KhachHang = new JScrollPane();
-		scrollPane_KhachHang.setBounds(650, 125, 800, 400);
+		scrollPane_KhachHang.setBounds(650, 125, 690, 400);
 		panel_KhachHang.add(scrollPane_KhachHang);
 		
 		JButton btn_ThueBD_KhachHang = new JButton("Thuê Băng Đĩa");
@@ -676,86 +693,89 @@ public class GD_Main extends JFrame {
 		lblNhapBangDia.setBounds(550, 5, 300, 35);
 		lblNhapBangDia.setForeground(Color.BLUE);
 		panel_NhapBangDia.add(lblNhapBangDia);
-		
-		JLabel lbl_MaBD = new JLabel("Mã băng đĩa: ");
-		lbl_MaBD.setFont(new Font("Times New Roman", Font.BOLD, 16));
-		lbl_MaBD.setBounds(20, 50, 130, 20);
-		panel_NhapBangDia.add(lbl_MaBD);
-		
-		txt_MaBD_NhapBD = new JTextField();
-		txt_MaBD_NhapBD.setEnabled(false);
-		txt_MaBD_NhapBD.setBounds(140, 50, 400, 25);
-		panel_NhapBangDia.add(txt_MaBD_NhapBD);
-		txt_MaBD_NhapBD.setColumns(10);
+		int a1 =20, b1=50,c1=130, d1=20;
+		int x1= 140, y1=50 , h1 = 400, w1 =25;
 		
 		JLabel lbl_TenBD = new JLabel("Tên Băng Đĩa: ");
 		lbl_TenBD.setFont(new Font("Times New Roman", Font.BOLD, 16));
-		lbl_TenBD.setBounds(20, 100, 130, 20);
+		lbl_TenBD.setBounds(a1, b1, c1, d1);
 		panel_NhapBangDia.add(lbl_TenBD);
 		
 		txt_TenBD_NhapBD = new JTextField();
-		txt_TenBD_NhapBD.setBounds(140, 100, 400, 25);
+		txt_TenBD_NhapBD.setBounds(x1, y1, h1, w1);
 		panel_NhapBangDia.add(txt_TenBD_NhapBD);
 		txt_TenBD_NhapBD.setColumns(10);
 		
 		JLabel lbl_MaTL = new JLabel("Mã Thể Loại: ");
 		lbl_MaTL.setFont(new Font("Times New Roman", Font.BOLD, 16));
-		lbl_MaTL.setBounds(20, 150, 130, 20);
+		b1+=50;
+		lbl_MaTL.setBounds(a1, b1, c1, d1);
 		panel_NhapBangDia.add(lbl_MaTL);
 		
 		txt_MaTheLoai_NhapBD = new JTextField();
-		txt_MaTheLoai_NhapBD.setBounds(140, 150, 400, 25);
+		y1+=50;
+		txt_MaTheLoai_NhapBD.setBounds(x1, y1, h1, w1);
 		panel_NhapBangDia.add(txt_MaTheLoai_NhapBD);
 		txt_MaTheLoai_NhapBD.setColumns(10);
 		
 		JLabel lbl_MaNCC_NhapBD = new JLabel("Mã NCC: ");
 		lbl_MaNCC_NhapBD.setFont(new Font("Times New Roman", Font.BOLD, 16));
-		lbl_MaNCC_NhapBD.setBounds(20, 200, 130, 20);
+		b1+=50;
+		lbl_MaNCC_NhapBD.setBounds(a1, b1, c1, d1);
 		panel_NhapBangDia.add(lbl_MaNCC_NhapBD);
 		
 		txt_MaNCC_NhapBD = new JTextField();
-		txt_MaNCC_NhapBD.setBounds(140, 200, 400, 25);
+		y1+=50;
+		txt_MaNCC_NhapBD.setBounds(x1, y1, h1, w1);
 		panel_NhapBangDia.add(txt_MaNCC_NhapBD);
 		txt_MaNCC_NhapBD.setColumns(10);
 		
 		JLabel lbl_SoLuong = new JLabel("Số Lượng: ");
 		lbl_SoLuong.setFont(new Font("Times New Roman", Font.BOLD, 16));
-		lbl_SoLuong.setBounds(20, 250, 130, 20);
+		b1+=50;
+		lbl_SoLuong.setBounds(a1, b1, c1, d1);
 		panel_NhapBangDia.add(lbl_SoLuong);
 		
 		txt_SoLuong_NhapBD= new JTextField();
-		txt_SoLuong_NhapBD.setBounds(140, 250, 400, 25);
+		y1+=50;
+		txt_SoLuong_NhapBD.setBounds(x1, y1, h1, w1);
 		panel_NhapBangDia.add(txt_SoLuong_NhapBD);
 		txt_SoLuong_NhapBD.setColumns(10);
 		
 		JLabel lbl_DonGia_NhapBD = new JLabel("Đơn giá: ");
 		lbl_DonGia_NhapBD.setFont(new Font("Times New Roman", Font.BOLD, 16));
-		lbl_DonGia_NhapBD.setBounds(20, 300, 130, 20);
+		b1+=50;
+		lbl_DonGia_NhapBD.setBounds(a1, b1, c1, d1);
 		panel_NhapBangDia.add(lbl_DonGia_NhapBD);
 		
 		txt_DonGia_NhapBD= new JTextField();
-		txt_DonGia_NhapBD.setBounds(140, 300, 400, 25);
+		y1+=50;
+		txt_DonGia_NhapBD.setBounds(x1, y1, h1, w1);
 		panel_NhapBangDia.add(txt_DonGia_NhapBD);
 		txt_DonGia_NhapBD.setColumns(10);
 		
 		
 		JLabel lbl_QuocGia_NhapBD = new JLabel("Quốc gia: ");
 		lbl_QuocGia_NhapBD.setFont(new Font("Times New Roman", Font.BOLD, 16));
-		lbl_QuocGia_NhapBD.setBounds(20, 350, 130, 20);
+		b1+=50;
+		lbl_QuocGia_NhapBD.setBounds(a1, b1, c1, d1);
 		panel_NhapBangDia.add(lbl_QuocGia_NhapBD);
 		
 		txt_QuocGia_NhapBD= new JTextField();
-		txt_QuocGia_NhapBD.setBounds(140, 350, 400, 25);
+		y1+=50;
+		txt_QuocGia_NhapBD.setBounds(x1, y1, h1, w1);
 		panel_NhapBangDia.add(txt_QuocGia_NhapBD);
 		txt_QuocGia_NhapBD.setColumns(10);
 		
 		JLabel lbl_GhiChu_NhapBD = new JLabel("Ghi chú: ");
 		lbl_GhiChu_NhapBD.setFont(new Font("Times New Roman", Font.BOLD, 16));
-		lbl_GhiChu_NhapBD.setBounds(20, 400, 130, 20);
+		b1+=50;
+		lbl_GhiChu_NhapBD.setBounds(a1, b1, c1, d1);
 		panel_NhapBangDia.add(lbl_GhiChu_NhapBD);
 		
 		txt_GhiChu_NhapBD = new JTextArea();
-		txt_GhiChu_NhapBD.setBounds(140, 400, 400, 80);
+		y1+=50;
+		txt_GhiChu_NhapBD.setBounds(x1, y1, h1, 80);
 		panel_NhapBangDia.add(txt_GhiChu_NhapBD);
         
 		JButton btn_Them_NhapBD = new JButton(" Nhập");
@@ -765,7 +785,7 @@ public class GD_Main extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		btn_Them_NhapBD.setBounds(100, 530, 150, 40);	
+		btn_Them_NhapBD.setBounds(140, 480, 130, 40);	
 		panel_NhapBangDia.add(btn_Them_NhapBD);
 		
 		
@@ -777,7 +797,7 @@ public class GD_Main extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		btn_XoaTrang_NhapBD.setBounds(280, 530, 150, 40);
+		btn_XoaTrang_NhapBD.setBounds(320, 480, 150, 40);
 		panel_NhapBangDia.add(btn_XoaTrang_NhapBD);
 		
 		JButton btn_Thoat_NhapBD = new JButton(" Thoát");
@@ -798,13 +818,13 @@ public class GD_Main extends JFrame {
 				}
 			}
 		});
-		btn_Thoat_NhapBD.setBounds(200, 590, 150, 40);
+		btn_Thoat_NhapBD.setBounds(240, 550, 130, 40);
 		panel_NhapBangDia.add(btn_Thoat_NhapBD);
 		
 		
 		JLabel lbl_Bang_NhapBD = new JLabel("Danh Sách Nhà Cung Cấp");
 		lbl_Bang_NhapBD.setFont(new Font("Times New Roman", Font.BOLD, 22));
-		lbl_Bang_NhapBD.setBounds(870, 50, 300, 25);
+		lbl_Bang_NhapBD.setBounds(810, 50, 300, 25);
 		panel_NhapBangDia.add(lbl_Bang_NhapBD);
 		
 		JLabel lbl_timkiem_NhapBD = new JLabel("Tìm kiếm:");
@@ -825,26 +845,26 @@ public class GD_Main extends JFrame {
 				
 			}
 		});
-		btn_TimKiem_NhapBD.setBounds(1170, 80, 150, 40);
+		btn_TimKiem_NhapBD.setBounds(1170, 80, 130, 30);
 		panel_NhapBangDia.add(btn_TimKiem_NhapBD);
 		
 		JScrollPane scrollPane_NhapBangDia = new JScrollPane();
-		scrollPane_NhapBangDia.setBounds(650, 125, 800, 200);
+		scrollPane_NhapBangDia.setBounds(650, 125, 690, 180);
 		panel_NhapBangDia.add(scrollPane_NhapBangDia);
 		
 		
 		JLabel lbl_TheLoai_NhapBD = new JLabel("Danh Sách Thể Loại Băng Đĩa");
 		lbl_TheLoai_NhapBD.setFont(new Font("Times New Roman", Font.BOLD, 22));
-		lbl_TheLoai_NhapBD.setBounds(870, 370, 300, 25);
+		lbl_TheLoai_NhapBD.setBounds(810, 330, 300, 25);
 		panel_NhapBangDia.add(lbl_TheLoai_NhapBD);
 		
 		JLabel lbl_timkiembd_NhapBD = new JLabel("Tìm kiếm:");
 		lbl_timkiembd_NhapBD.setFont(new Font("Times New Roman", Font.BOLD, 16));
-		lbl_timkiembd_NhapBD.setBounds(650, 415, 80, 20);
+		lbl_timkiembd_NhapBD.setBounds(650, 370, 80, 20);
 		panel_NhapBangDia.add(lbl_timkiembd_NhapBD);
 		
 		txt_TimKiemBD_NhapBD = new JTextField();
-		txt_TimKiemBD_NhapBD.setBounds(740, 415, 400, 25);
+		txt_TimKiemBD_NhapBD.setBounds(740, 370, 400, 25);
 		panel_NhapBangDia.add(txt_TimKiemBD_NhapBD);
 		txt_TimKiemBD_NhapBD.setColumns(10);
 		
@@ -856,11 +876,11 @@ public class GD_Main extends JFrame {
 				
 			}
 		});
-		btn_TimKiemBD_NhapBD.setBounds(1170, 405, 150, 40);
+		btn_TimKiemBD_NhapBD.setBounds(1170, 370, 130, 30);
 		panel_NhapBangDia.add(btn_TimKiemBD_NhapBD);
 		
 		JScrollPane scrollPane_TheLoaiBangDia = new JScrollPane();
-		scrollPane_TheLoaiBangDia.setBounds(650, 450, 800, 200);
+		scrollPane_TheLoaiBangDia.setBounds(650, 405, 690, 180);
 		panel_NhapBangDia.add(scrollPane_TheLoaiBangDia);
 		
 		
@@ -1054,7 +1074,7 @@ public class GD_Main extends JFrame {
 		panel_BangDia.add(btn_TimKiem_BD);
 		
 		JScrollPane scrollPane_BangDia = new JScrollPane();
-		scrollPane_BangDia.setBounds(650, 125, 800, 500);
+		scrollPane_BangDia.setBounds(650, 125, 690, 450);
 		panel_BangDia.add(scrollPane_BangDia);
 		
 		/*----------------------PANEL NHÂN VIÊN--------------------------*/
@@ -1381,34 +1401,34 @@ public class GD_Main extends JFrame {
 		panel_ThueBangDia.add(txt_NgayThue_ThueBD);
 
 		
-		JLabel lbl_Coc_ThueBD = new JLabel("Tiền Cọc: ");
-		lbl_Coc_ThueBD.setFont(new Font("Times New Roman", Font.BOLD, 16));
-		lbl_Coc_ThueBD.setBounds(20, 390, 130, 20);
-		panel_ThueBangDia.add(lbl_Coc_ThueBD);
-		
-		txt_TienCoc_ThueBD = new JTextField();
-		txt_TienCoc_ThueBD.setBounds(140, 390, 460, 25);
-		panel_ThueBangDia.add(txt_TienCoc_ThueBD);
-		txt_TienCoc_ThueBD.setColumns(10);
+//		JLabel lbl_Coc_ThueBD = new JLabel("Tiền Cọc: ");
+//		lbl_Coc_ThueBD.setFont(new Font("Times New Roman", Font.BOLD, 16));
+//		lbl_Coc_ThueBD.setBounds(20, 390, 130, 20);
+//		panel_ThueBangDia.add(lbl_Coc_ThueBD);
+//		
+//		txt_TienCoc_ThueBD = new JTextField();
+//		txt_TienCoc_ThueBD.setBounds(140, 390, 460, 25);
+//		panel_ThueBangDia.add(txt_TienCoc_ThueBD);
+//		txt_TienCoc_ThueBD.setColumns(10);
 		
 		
 		JLabel lbl_TrangThai_ThueBD = new JLabel("Trạng Thái: ");
 		lbl_TrangThai_ThueBD.setFont(new Font("Times New Roman", Font.BOLD, 16));
-		lbl_TrangThai_ThueBD.setBounds(20, 430, 130, 20);
+		lbl_TrangThai_ThueBD.setBounds(20, 390, 130, 20);
 		panel_ThueBangDia.add(lbl_TrangThai_ThueBD);
 		
 		txt_TrangThaiBD_ThueBD= new JTextField();
-		txt_TrangThaiBD_ThueBD.setBounds(140, 430, 460, 25);
+		txt_TrangThaiBD_ThueBD.setBounds(140, 390, 460, 25);
 		panel_ThueBangDia.add(txt_TrangThaiBD_ThueBD);
 		txt_TrangThaiBD_ThueBD.setColumns(10);
 		
 		JLabel lbl_GhiChu_ThueBD = new JLabel("Ghi chú: ");
 		lbl_GhiChu_ThueBD.setFont(new Font("Times New Roman", Font.BOLD, 16));
-		lbl_GhiChu_ThueBD.setBounds(20, 470, 130, 20);
+		lbl_GhiChu_ThueBD.setBounds(20, 430, 130, 20);
 		panel_ThueBangDia.add(lbl_GhiChu_ThueBD);
 		
 		txt_GhiChu_ThueBD = new JTextArea();
-		txt_GhiChu_ThueBD.setBounds(140, 470, 460, 80);
+		txt_GhiChu_ThueBD.setBounds(140, 430, 460, 80);
 		panel_ThueBangDia.add(txt_GhiChu_ThueBD);
         
 		JButton btn_Thue_ThueBD = new JButton(" Đặt Thuê");
@@ -1647,34 +1667,34 @@ public class GD_Main extends JFrame {
 		panel_TraBangDia.add(txt_NgayThue_ThueBD);
 
 		
-		JLabel lbl_Coc_TraBD = new JLabel("Tiền Cọc: ");
-		lbl_Coc_TraBD.setFont(new Font("Times New Roman", Font.BOLD, 16));
-		lbl_Coc_TraBD.setBounds(20, 390, 130, 20);
-		panel_TraBangDia.add(lbl_Coc_TraBD);
-		
-		txt_TienCoc_TraBD = new JTextField();
-		txt_TienCoc_TraBD.setBounds(140, 390, 460, 25);
-		panel_TraBangDia.add(txt_TienCoc_TraBD);
-		txt_TienCoc_TraBD.setColumns(10);
+//		JLabel lbl_Coc_TraBD = new JLabel("Tiền Cọc: ");
+//		lbl_Coc_TraBD.setFont(new Font("Times New Roman", Font.BOLD, 16));
+//		lbl_Coc_TraBD.setBounds(20, 390, 130, 20);
+//		panel_TraBangDia.add(lbl_Coc_TraBD);
+//		
+//		txt_TienCoc_TraBD = new JTextField();
+//		txt_TienCoc_TraBD.setBounds(140, 390, 460, 25);
+//		panel_TraBangDia.add(txt_TienCoc_TraBD);
+//		txt_TienCoc_TraBD.setColumns(10);
 		
 		
 		JLabel lbl_TrangThai_TraBD = new JLabel("Trạng Thái: ");
 		lbl_TrangThai_TraBD.setFont(new Font("Times New Roman", Font.BOLD, 16));
-		lbl_TrangThai_TraBD.setBounds(20, 430, 130, 20);
+		lbl_TrangThai_TraBD.setBounds(20, 390, 130, 20);
 		panel_TraBangDia.add(lbl_TrangThai_TraBD);
 		
 		txt_TrangThaiBD_TraBD= new JTextField();
-		txt_TrangThaiBD_TraBD.setBounds(140, 430, 460, 25);
+		txt_TrangThaiBD_TraBD.setBounds(140, 390, 460, 25);
 		panel_TraBangDia.add(txt_TrangThaiBD_TraBD);
 		txt_TrangThaiBD_TraBD.setColumns(10);
 		
 		JLabel lbl_GhiChu_TraBD = new JLabel("Ghi chú: ");
 		lbl_GhiChu_TraBD.setFont(new Font("Times New Roman", Font.BOLD, 16));
-		lbl_GhiChu_TraBD.setBounds(20, 470, 130, 20);
+		lbl_GhiChu_TraBD.setBounds(20, 430, 130, 20);
 		panel_TraBangDia.add(lbl_GhiChu_TraBD);
 		
 		txt_GhiChu_TraBD = new JTextArea();
-		txt_GhiChu_TraBD.setBounds(140, 470, 460, 80);
+		txt_GhiChu_TraBD.setBounds(140, 430, 460, 60);
 		panel_TraBangDia.add(txt_GhiChu_TraBD);
         
 		JButton btn_ThanhToan_TraBD = new JButton(" Thanh Toán");
@@ -1684,7 +1704,7 @@ public class GD_Main extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		btn_ThanhToan_TraBD.setBounds(150, 570, 160, 40);	
+		btn_ThanhToan_TraBD.setBounds(100, 510, 150, 30);	
 		panel_TraBangDia.add(btn_ThanhToan_TraBD);
 		
 		JButton btn_InHoaDon_TraBD = new JButton(" In Hóa Đơn");
@@ -1694,7 +1714,7 @@ public class GD_Main extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		btn_InHoaDon_TraBD.setBounds(370, 570, 156, 40);	
+		btn_InHoaDon_TraBD.setBounds(280, 510, 150, 30);	
 		panel_TraBangDia.add(btn_InHoaDon_TraBD);
 		
 		JButton btn_Sua_TraBD = new JButton(" Chỉnh Sửa");
@@ -1704,7 +1724,7 @@ public class GD_Main extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		btn_Sua_TraBD.setBounds(190, 620, 140, 40);
+		btn_Sua_TraBD.setBounds(450, 510, 150, 30);
 		panel_TraBangDia.add(btn_Sua_TraBD);
 		
 		JButton btn_Xoa_TraBD = new JButton(" Xóa");
@@ -1714,7 +1734,7 @@ public class GD_Main extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		btn_Xoa_TraBD.setBounds(350, 620, 140, 40);
+		btn_Xoa_TraBD.setBounds(100, 550, 150, 30);
 		panel_TraBangDia.add(btn_Xoa_TraBD);
 		
 		
@@ -1725,7 +1745,7 @@ public class GD_Main extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		btn_XoaTrang_TraBD.setBounds(510, 620, 140, 40);
+		btn_XoaTrang_TraBD.setBounds(280, 550, 150, 30);
 		panel_TraBangDia.add(btn_XoaTrang_TraBD);
 		
 		JButton btn_Thoat_TraBD = new JButton(" Thoát");
@@ -1746,13 +1766,13 @@ public class GD_Main extends JFrame {
 				}
 			}
 		});
-		btn_Thoat_TraBD.setBounds(20, 620, 150, 40);
+		btn_Thoat_TraBD.setBounds(450, 550, 150, 30);
 		panel_TraBangDia.add(btn_Thoat_TraBD);
 		
 		
 		JLabel lbl_DSBD_TraBD = new JLabel("Danh Sách Băng Đĩa Đang Thuê");
 		lbl_DSBD_TraBD.setFont(new Font("Times New Roman", Font.BOLD, 22));
-		lbl_DSBD_TraBD.setBounds(850, 50, 400, 25);
+		lbl_DSBD_TraBD.setBounds(800, 50, 400, 25);
 		panel_TraBangDia.add(lbl_DSBD_TraBD);
 		
 		JLabel lbl_timkiemDSBD_TraBD = new JLabel("Tìm kiếm:");
@@ -1773,11 +1793,11 @@ public class GD_Main extends JFrame {
 				
 			}
 		});
-		btn_TimKiemBD_TraBD.setBounds(1180, 80, 150, 40);
+		btn_TimKiemBD_TraBD.setBounds(1180, 80, 140, 30);
 		panel_TraBangDia.add(btn_TimKiemBD_TraBD);
 		
 		JScrollPane scrollPane_DSBangDia_TraBD = new JScrollPane();
-		scrollPane_DSBangDia_TraBD.setBounds(670, 125, 800, 500);
+		scrollPane_DSBangDia_TraBD.setBounds(670, 125, 670, 450);
 		panel_TraBangDia.add(scrollPane_DSBangDia_TraBD);
 		
 		
@@ -1843,23 +1863,15 @@ public class GD_Main extends JFrame {
 				}
 			}
 		});
-		btn_Thoat_ThongKe.setBounds(1060, 60, 150, 40);
+		btn_Thoat_ThongKe.setBounds(1030, 60, 150, 40);
 		panel_ThongKe.add(btn_Thoat_ThongKe);
 		
 		
 		JScrollPane scrollPane_ThongKeBangDia_ThongKe = new JScrollPane();
-		scrollPane_ThongKeBangDia_ThongKe.setBounds(150, 130, 1200, 500);
+		scrollPane_ThongKeBangDia_ThongKe.setBounds(120, 130, 1100, 450);
 		panel_ThongKe.add(scrollPane_ThongKeBangDia_ThongKe);
 		
 	}	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	
