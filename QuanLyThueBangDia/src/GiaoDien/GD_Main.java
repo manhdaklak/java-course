@@ -5,6 +5,7 @@ import java.awt.Color;
 import java.awt.Component;
 import java.awt.EventQueue;
 import java.awt.Font;
+import java.awt.Panel;
 import java.awt.SystemColor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -14,7 +15,7 @@ import javax.swing.table.DefaultTableModel;
 
 import com.toedter.calendar.JDateChooser;
 
-public class GD_Main extends JFrame {
+public class GD_Main extends JFrame implements ActionListener {
 	
 	/**
 	 * 
@@ -67,8 +68,27 @@ public class GD_Main extends JFrame {
 	private Component txt_TimKiemBD_TraBD;
 	private JTextArea txt_GhiChu_TraBD;
 	private JTextField txt_TrangThaiBD_TraBD;
-	private JTextField txt_TienCoc_TraBD;
-
+	private JComboBox<String> cboQuocGia;
+	private JComboBox<String> cboTheLoai; 
+	private JComboBox<String> cboNhaCC;
+	
+	//menuItem Nha cung cap
+	private JMenuItem mniTimKiem_NCC, mniDanhSach_NCC,mniCapNhat_NCC;
+	
+	// menuItem KhachHang
+	private JMenuItem mniTimKiem_KH, mniDanhSach_KH,mniCapNhat_KH;
+	
+	//menuItem Bang Dia
+	private JMenuItem mniTimKiem_BD, mniDanhSach_BD,mniCapNhat_BD, mniThueBD, mniTraBD;
+	
+	//menuItem Thong Ke
+	
+	private JMenuItem mniTK_KH, mniTK_DoanhThu,mniTK_KHDangThue;
+	
+	// menuItem Nhan Vien
+	private JMenuItem mniThongTin_NV,mniCapNhat_NV;
+	
+	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -86,16 +106,32 @@ public class GD_Main extends JFrame {
 		setTitle("Quản Lý Băng Đĩa");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(0, 0, 1500, 700);
-
+		setResizable(false);
 		//Menu menubar
+		
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
 		menuBar.setFont(new Font("Times New Roman", Font.BOLD, 25));
 		
-		JMenuItem mnNCC = new JMenuItem("Nhà Cung Cấp");
-		mnNCC.setIcon(new ImageIcon("src/images/inTK.jpg"));
+		JMenu mnNCC = new JMenu("  Nhà Cung Cấp     ");
+		mnNCC.setIcon(new ImageIcon("src/images/supplier.png"));
+		mnNCC.setFont(new Font("Times New Roman", Font.LAYOUT_NO_LIMIT_CONTEXT, 17));
 		mnNCC.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 		mnNCC.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM); 
+	
+		mnNCC.add(mniTimKiem_NCC = new JMenuItem(" Tìm Kiếm   "));
+		mniTimKiem_NCC.setFont(new Font("Times New Roman", Font.LAYOUT_NO_LIMIT_CONTEXT, 14));
+		mniTimKiem_NCC.setIcon(new ImageIcon("src/images/seo.png"));
+		
+		mnNCC.add(mniDanhSach_NCC = new JMenuItem(" Danh Sách "));
+		mniDanhSach_NCC.setFont(new Font("Times New Roman", Font.LAYOUT_NO_LIMIT_CONTEXT, 14));
+		mniDanhSach_NCC.setIcon(new ImageIcon("src/images/check-list.png"));
+		
+		mnNCC.add(mniCapNhat_NCC = new JMenuItem(" Cập Nhật  "));
+		mniCapNhat_NCC.setFont(new Font("Times New Roman", Font.LAYOUT_NO_LIMIT_CONTEXT, 14));
+		mniCapNhat_NCC.setIcon(new ImageIcon("src/images/refresh.png"));
+		
+		
 		mnNCC.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				panel_NCC.setVisible(true);
@@ -107,15 +143,30 @@ public class GD_Main extends JFrame {
 				panel_ThueBangDia.setVisible(false);
 				panel_TraBangDia.setVisible(false);
 				panel_ThongKe.setVisible(false);
+				
 				loadNCC();
 			}
 		});
 		menuBar.add(mnNCC);
 		
-		JMenuItem mnKhachHang = new JMenuItem("  Khách Hàng  ");
+		JMenu mnKhachHang = new JMenu("  Khách Hàng      ");
 		mnKhachHang.setIcon(new ImageIcon("src/images/community.png"));
+		mnKhachHang.setFont(new Font("Times New Roman", Font.PLAIN, 17));
 		mnKhachHang.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 		mnKhachHang.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+		
+		mnKhachHang.add(mniTimKiem_KH = new JMenuItem("Tìm Kiếm"));
+		mniTimKiem_KH.setFont(new Font("Times New Roman", Font.LAYOUT_NO_LIMIT_CONTEXT, 14));
+		mniTimKiem_KH.setIcon(new ImageIcon("src/images/seo.png"));
+			
+		mnKhachHang.add(mniDanhSach_KH = new JMenuItem(" Danh Sách "));
+		mniDanhSach_KH.setFont(new Font("Times New Roman", Font.LAYOUT_NO_LIMIT_CONTEXT, 14));
+		mniDanhSach_KH.setIcon(new ImageIcon("src/images/check-list.png"));
+		
+		mnKhachHang.add(mniCapNhat_KH = new JMenuItem(" Cập Nhật  "));
+		mniCapNhat_KH.setFont(new Font("Times New Roman", Font.LAYOUT_NO_LIMIT_CONTEXT, 14));
+		mniCapNhat_KH.setIcon(new ImageIcon("src/images/refresh.png"));
+		
 		mnKhachHang.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				panel_NCC.setVisible(false);
@@ -127,14 +178,38 @@ public class GD_Main extends JFrame {
 				panel_ThueBangDia.setVisible(false);
 				panel_TraBangDia.setVisible(false);
 				panel_ThongKe.setVisible(false);
+				
 			}
 		});
 		menuBar.add(mnKhachHang);
 		
-		JMenuItem mnNhapBangDia = new JMenuItem("Nhập Băng Đĩa");
-		mnNhapBangDia.setIcon(new ImageIcon("src/images/inTK.png"));
+		JMenu mnNhapBangDia = new JMenu("   Băng Đĩa      ");
+		mnNhapBangDia.setIcon(new ImageIcon("src/images/dvd.png"));
+		mnNhapBangDia.setFont(new Font("Times New Roman", Font.LAYOUT_NO_LIMIT_CONTEXT, 17));
 		mnNhapBangDia.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 		mnNhapBangDia.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+		
+
+		mnNhapBangDia.add(mniTimKiem_BD = new JMenuItem("Tìm Kiếm"));
+		mniTimKiem_BD.setFont(new Font("Times New Roman", Font.LAYOUT_NO_LIMIT_CONTEXT, 14));
+		mniTimKiem_BD.setIcon(new ImageIcon("src/images/seo.png"));
+			
+		mnNhapBangDia.add(mniDanhSach_BD = new JMenuItem(" Danh Sách "));
+		mniDanhSach_BD.setFont(new Font("Times New Roman", Font.LAYOUT_NO_LIMIT_CONTEXT, 14));
+		mniDanhSach_BD.setIcon(new ImageIcon("src/images/check-list.png"));
+		
+		mnNhapBangDia.add(mniCapNhat_BD = new JMenuItem(" Cập Nhật  "));
+		mniCapNhat_BD.setFont(new Font("Times New Roman", Font.LAYOUT_NO_LIMIT_CONTEXT, 14));
+		mniCapNhat_BD.setIcon(new ImageIcon("src/images/refresh.png"));
+		
+		mnNhapBangDia.add(mniThueBD = new JMenuItem(" Thuê Băng Đĩa "));
+		mniThueBD.setFont(new Font("Times New Roman", Font.LAYOUT_NO_LIMIT_CONTEXT, 14));
+		mniThueBD.setIcon(new ImageIcon("src/images/buy.png"));
+		
+		mnNhapBangDia.add(mniTraBD = new JMenuItem(" Trả Băng Đĩa  "));
+		mniTraBD.setFont(new Font("Times New Roman", Font.LAYOUT_NO_LIMIT_CONTEXT, 14));
+		mniTraBD.setIcon(new ImageIcon("src/images/pay.png"));
+		
 		mnNhapBangDia.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				panel_NCC.setVisible(false);
@@ -150,7 +225,7 @@ public class GD_Main extends JFrame {
 		});
 		menuBar.add(mnNhapBangDia);
 		
-		JMenuItem mnBangDia = new JMenuItem("       Băng Đĩa      ");
+/*		JMenuItem mnBangDia = new JMenuItem("       Băng Đĩa      ");
 		mnBangDia.setIcon(new ImageIcon("src/images/inTK.png"));
 		mnBangDia.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 		mnBangDia.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM); 
@@ -187,7 +262,7 @@ public class GD_Main extends JFrame {
 			}
 		});
 		menuBar.add(mnThueBangDia);
-		
+	
 		JMenuItem mnTraBangDia = new JMenuItem("  Trả Băng Đĩa  ");
 		mnTraBangDia.setIcon(new ImageIcon("src/images/inTK.png"));
 		mnTraBangDia.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -205,12 +280,26 @@ public class GD_Main extends JFrame {
 				panel_ThongKe.setVisible(false);
 			}
 		});
-		menuBar.add(mnTraBangDia);
+		menuBar.add(mnTraBangDia); */
 		
-		JMenuItem mnThongKe = new JMenuItem("    Thống Kê    ");
-		mnThongKe.setIcon(new ImageIcon("src/images/inTK.png"));
+		JMenu mnThongKe = new JMenu("    Thống Kê    ");
+		mnThongKe.setIcon(new ImageIcon("src/images/tk.png"));
+		mnThongKe.setFont(new Font("Times New Roman", Font.LAYOUT_NO_LIMIT_CONTEXT, 17));
 		mnThongKe.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 		mnThongKe.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);   
+		
+		mnThongKe.add(mniTK_DoanhThu = new JMenuItem("Doanh Thu"));
+		mniTK_DoanhThu.setFont(new Font("Times New Roman", Font.LAYOUT_NO_LIMIT_CONTEXT, 14));
+		mniTK_DoanhThu.setIcon(new ImageIcon("src/images/tkdt.png"));
+			
+		mnThongKe.add(mniTK_KHDangThue = new JMenuItem(" Khách Hàng Đang Thuê"));
+		mniTK_KHDangThue.setFont(new Font("Times New Roman", Font.LAYOUT_NO_LIMIT_CONTEXT, 14));
+		mniTK_KHDangThue.setIcon(new ImageIcon("src/images/khdt.png"));
+		
+		mnThongKe.add(mniTK_KH = new JMenuItem(" Khách Hàng  "));
+		mniTK_KH.setFont(new Font("Times New Roman", Font.LAYOUT_NO_LIMIT_CONTEXT, 14));
+		mniTK_KH.setIcon(new ImageIcon("src/images/tkkh.png"));
+		
 		mnThongKe.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				panel_NCC.setVisible(false);
@@ -226,10 +315,19 @@ public class GD_Main extends JFrame {
 		});
 		menuBar.add(mnThongKe);
 		
-		JMenuItem mnNhanVien = new JMenuItem("   Nhân Viên  ");
-		mnNhanVien.setIcon(new ImageIcon("src/images/inTK.png"));
+		JMenu mnNhanVien = new JMenu("Nhân Viên");
+		mnNhanVien.setFont(new Font("Times New Roman", Font.LAYOUT_NO_LIMIT_CONTEXT, 17));
+		mnNhanVien.setIcon(new ImageIcon("src/images/team.png"));
 		mnNhanVien.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-		mnNhanVien.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);   
+		mnNhanVien.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);  
+		
+		mnNhanVien.add(mniThongTin_NV = new JMenuItem(" Thông Tin"));
+		mniThongTin_NV.setFont(new Font("Times New Roman", Font.LAYOUT_NO_LIMIT_CONTEXT, 14));
+		mniThongTin_NV.setIcon(new ImageIcon("src/images/check-list.png"));
+		
+		mnNhanVien.add(mniCapNhat_NV = new JMenuItem(" Cập Nhật  "));
+		mniCapNhat_NV.setFont(new Font("Times New Roman", Font.LAYOUT_NO_LIMIT_CONTEXT, 14));
+		mniCapNhat_NV.setIcon(new ImageIcon("src/images/refresh.png"));
 		mnNhanVien.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				panel_NCC.setVisible(false);
@@ -249,7 +347,8 @@ public class GD_Main extends JFrame {
 		menuBar.add(mnan);
 		
 		JMenuItem mnDoiMatKhau = new JMenuItem("  Đổi Mật Khẩu  ");
-		mnDoiMatKhau.setIcon(new ImageIcon("src/images/inTK.png"));
+		mnDoiMatKhau.setIcon(new ImageIcon("src/images/user.png"));
+		mnDoiMatKhau.setFont(new Font("Times New Roman", Font.LAYOUT_NO_LIMIT_CONTEXT, 17));
 		mnDoiMatKhau.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 		mnDoiMatKhau.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 		mnDoiMatKhau.addActionListener(new ActionListener() {
@@ -268,7 +367,8 @@ public class GD_Main extends JFrame {
 		menuBar.add(mnDoiMatKhau);
 		
 		JMenuItem mnDangXuat = new JMenuItem("    Đăng Xuất    ");
-		mnDangXuat.setIcon(new ImageIcon("src/images/inTK.png"));
+		mnDangXuat.setFont(new Font("Times New Roman", Font.LAYOUT_NO_LIMIT_CONTEXT, 17));
+		mnDangXuat.setIcon(new ImageIcon("src/images/dx.png"));
 		mnDangXuat.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 		mnDangXuat.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM); 
 		mnDangXuat.addActionListener(new ActionListener() {
@@ -280,8 +380,9 @@ public class GD_Main extends JFrame {
 		});
 		menuBar.add(mnDangXuat);
 		
-		JMenuItem mnDong = new JMenuItem("   Đóng");
-		mnDong.setIcon(new ImageIcon("src/images/inTK.png"));
+		JMenuItem mnDong = new JMenuItem("   Đóng ");
+		mnDong.setIcon(new ImageIcon("src/images/t.png"));
+		mnDong.setFont(new Font("Times New Roman", Font.LAYOUT_NO_LIMIT_CONTEXT, 17));
 		mnDong.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 		mnDong.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 		
@@ -306,7 +407,7 @@ public class GD_Main extends JFrame {
 		lblTrangChu.setIcon(new ImageIcon("src/images/ptud1.jpg"));
 		lblTrangChu.setBounds(0, 0, 1500, 700);
 		panel_TrangChu.add(lblTrangChu);
-        
+		setResizable(false);
         /*------------------------PANEL NHÀ CUNG CẤP-----------------------------*/
         panel_NCC = new JPanel();
 		getContentPane().add(panel_NCC);
@@ -477,17 +578,6 @@ public class GD_Main extends JFrame {
 		lblKhachHang.setForeground(Color.BLUE);
 		panel_KhachHang.add(lblKhachHang);
 		
-			
-//		JLabel lbl_MaKH_KH = new JLabel("Mã khách hàng: ");
-//		lbl_MaKH_KH.setFont(new Font("Times New Roman", Font.BOLD, 16));
-//		lbl_MaKH_KH.setBounds(20, 50, 130, 20);
-//		panel_KhachHang.add(lbl_MaKH_KH);
-//		
-//		txt_MaKH_KhachHang = new JTextField();
-//		txt_MaKH_KhachHang.setEnabled(false);
-//		txt_MaKH_KhachHang.setBounds(140, 50, 400, 25);
-//		panel_KhachHang.add(txt_MaKH_KhachHang);
-//		txt_MaKH_KhachHang.setColumns(10);
 		int a =20, b =50,c=130, d=20;
 		int x= 140, y=50 , h = 400, w =25;
 		
@@ -549,17 +639,6 @@ public class GD_Main extends JFrame {
 		txt_Email_KhachHang.setBounds(x, y, h, w);
 		panel_KhachHang.add(txt_Email_KhachHang);
 		txt_Email_KhachHang.setColumns(10);
-		
-		
-//		JLabel lbl_DiemTL_KH = new JLabel("Diểm tích lũy: ");
-//		lbl_DiemTL_KH.setFont(new Font("Times New Roman", Font.BOLD, 16));
-//		lbl_DiemTL_KH.setBounds(20, 350, 130, 20);
-//		panel_KhachHang.add(lbl_DiemTL_KH);
-//		
-//		txt_DiemTL_KhachHang= new JTextField();
-//		txt_DiemTL_KhachHang.setBounds(140, 350, 400, 25);
-//		panel_KhachHang.add(txt_DiemTL_KhachHang);
-//		txt_DiemTL_KhachHang.setColumns(10);
 		
 		JLabel lbl_GhiChu_KH = new JLabel("Ghi chú: ");
 		lbl_GhiChu_KH.setFont(new Font("Times New Roman", Font.BOLD, 16));
@@ -712,11 +791,11 @@ public class GD_Main extends JFrame {
 		lbl_MaTL.setBounds(a1, b1, c1, d1);
 		panel_NhapBangDia.add(lbl_MaTL);
 		
-		txt_MaTheLoai_NhapBD = new JTextField();
+		cboTheLoai = new JComboBox<String>();
 		y1+=50;
-		txt_MaTheLoai_NhapBD.setBounds(x1, y1, h1, w1);
-		panel_NhapBangDia.add(txt_MaTheLoai_NhapBD);
-		txt_MaTheLoai_NhapBD.setColumns(10);
+		cboTheLoai.setBounds(x1, y1, h1, w1);
+		panel_NhapBangDia.add(cboTheLoai);
+	
 		
 		JLabel lbl_MaNCC_NhapBD = new JLabel("Mã NCC: ");
 		lbl_MaNCC_NhapBD.setFont(new Font("Times New Roman", Font.BOLD, 16));
@@ -724,11 +803,11 @@ public class GD_Main extends JFrame {
 		lbl_MaNCC_NhapBD.setBounds(a1, b1, c1, d1);
 		panel_NhapBangDia.add(lbl_MaNCC_NhapBD);
 		
-		txt_MaNCC_NhapBD = new JTextField();
+		cboNhaCC = new JComboBox<String>();
 		y1+=50;
-		txt_MaNCC_NhapBD.setBounds(x1, y1, h1, w1);
-		panel_NhapBangDia.add(txt_MaNCC_NhapBD);
-		txt_MaNCC_NhapBD.setColumns(10);
+		cboNhaCC.setBounds(x1, y1, h1, w1);
+		panel_NhapBangDia.add(cboNhaCC);
+		
 		
 		JLabel lbl_SoLuong = new JLabel("Số Lượng: ");
 		lbl_SoLuong.setFont(new Font("Times New Roman", Font.BOLD, 16));
@@ -761,11 +840,11 @@ public class GD_Main extends JFrame {
 		lbl_QuocGia_NhapBD.setBounds(a1, b1, c1, d1);
 		panel_NhapBangDia.add(lbl_QuocGia_NhapBD);
 		
-		txt_QuocGia_NhapBD= new JTextField();
+		cboQuocGia= new JComboBox<String>();
 		y1+=50;
-		txt_QuocGia_NhapBD.setBounds(x1, y1, h1, w1);
-		panel_NhapBangDia.add(txt_QuocGia_NhapBD);
-		txt_QuocGia_NhapBD.setColumns(10);
+		cboQuocGia.setBounds(x1, y1, h1, w1);
+		panel_NhapBangDia.add(cboQuocGia);
+		
 		
 		JLabel lbl_GhiChu_NhapBD = new JLabel("Ghi chú: ");
 		lbl_GhiChu_NhapBD.setFont(new Font("Times New Roman", Font.BOLD, 16));
@@ -1665,18 +1744,7 @@ public class GD_Main extends JFrame {
 		txt_NgayThue_ThueBD.setDateFormatString("yyyy - MM - dd");
 		txt_NgayThue_ThueBD.setBounds(140, 350, 460, 25);
 		panel_TraBangDia.add(txt_NgayThue_ThueBD);
-
-		
-//		JLabel lbl_Coc_TraBD = new JLabel("Tiền Cọc: ");
-//		lbl_Coc_TraBD.setFont(new Font("Times New Roman", Font.BOLD, 16));
-//		lbl_Coc_TraBD.setBounds(20, 390, 130, 20);
-//		panel_TraBangDia.add(lbl_Coc_TraBD);
-//		
-//		txt_TienCoc_TraBD = new JTextField();
-//		txt_TienCoc_TraBD.setBounds(140, 390, 460, 25);
-//		panel_TraBangDia.add(txt_TienCoc_TraBD);
-//		txt_TienCoc_TraBD.setColumns(10);
-		
+	
 		
 		JLabel lbl_TrangThai_TraBD = new JLabel("Trạng Thái: ");
 		lbl_TrangThai_TraBD.setFont(new Font("Times New Roman", Font.BOLD, 16));
@@ -1890,8 +1958,18 @@ public class GD_Main extends JFrame {
 
 			
 		}
-		
-		
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+		Object o = e.getSource();
+		if(o == mniCapNhat_NCC) {
+				 
+			
+//			 new panel_NCC.setVisible(true);
+			}
+			
+		}
+
 	
 	
 }

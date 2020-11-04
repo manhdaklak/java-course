@@ -12,6 +12,8 @@ import java.awt.Font;
 import java.awt.HeadlessException;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+import javax.swing.JCheckBox;
+
 import java.awt.event.ActionListener;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -21,11 +23,12 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import javax.swing.ImageIcon;
 
-public class GD_DangNhap extends JFrame{
+public class GD_DangNhap extends JFrame implements ActionListener{
 
 	private JPanel contentPane;
 	private JTextField txt_Username;
 	private JPasswordField txt_PassWord;
+	private static JCheckBox cboHienThi;
 
 	/**
 	 * Launch the application 7777
@@ -52,13 +55,14 @@ public class GD_DangNhap extends JFrame{
 		setType(Type.UTILITY);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(420, 150, 525, 370);
+		setResizable(false);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		JLabel lblLog = new JLabel("ĐĂNG NHẬP TÀI KHOẢN");
-		lblLog.setFont(new Font("Kristen ITC", Font.BOLD, 25));
+		lblLog.setFont(new Font("Time New Roman", Font.BOLD, 25));
 		lblLog.setForeground(Color.BLUE);
 		lblLog.setIcon(new ImageIcon("src/images/Apps-preferences-desktop-user-password-icon.png"));
 		lblLog.setBounds(80, 30, 400, 70);
@@ -86,6 +90,14 @@ public class GD_DangNhap extends JFrame{
 		contentPane.add(txt_PassWord);
 		txt_PassWord.setColumns(10);
 		
+		txt_PassWord.setToolTipText("Vui lòng nhập mật khẩu");
+		txt_PassWord.setFont(new Font("Times New Roman", Font.PLAIN, 18));
+		contentPane.add(cboHienThi = new JCheckBox("Hiển thị mật khẩu"));
+		cboHienThi.setBounds(220, 210, 230, 25);
+		cboHienThi.setFont(new Font("Times New Roman", Font.PLAIN, 18));
+		
+		cboHienThi.addActionListener((ActionListener) this);
+		
 		JButton btn_Login = new JButton("Đăng Nhập");
 		btn_Login.setIcon(new ImageIcon("src/images/login.png"));
 		btn_Login.setFont(new Font("Times New Roman", Font.BOLD, 16));
@@ -94,7 +106,7 @@ public class GD_DangNhap extends JFrame{
 				evenLogin();
 			}
 		});
-		btn_Login.setBounds(90, 240, 150, 40);
+		btn_Login.setBounds(130, 250, 150, 40);
 		contentPane.add(btn_Login);
 		
 		JButton btn_Exit = new JButton("Thoát");
@@ -108,9 +120,10 @@ public class GD_DangNhap extends JFrame{
 				}
 			}
 		});
-		btn_Exit.setBounds(300, 240, 150, 40);
+		btn_Exit.setBounds(300, 250, 150, 40);
 		contentPane.add(btn_Exit);
 	}
+	
 	public void evenLogin(){
 		String user_Name =txt_Username.getText().trim();
 		String passWord= txt_PassWord.getText().trim();
@@ -136,5 +149,17 @@ public class GD_DangNhap extends JFrame{
 //				e1.printStackTrace();
 //			}
 //			JOptionPane.showMessageDialog(null,"Tên đăng nhập hoặc mật khẩu sai! Vui lòng nhập lại!");
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		Object obj = e.getSource();
+		if(cboHienThi.isSelected()) {
+			txt_PassWord.setEchoChar((char)0);
+		}else {
+			txt_PassWord.setEchoChar('*');
+		}
+		
+		
 	}
 }
