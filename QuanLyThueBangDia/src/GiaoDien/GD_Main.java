@@ -18,7 +18,7 @@ import com.toedter.calendar.JDateChooser;
 public class GD_Main extends JFrame implements ActionListener {
 	
 	/**
-	 * 
+	 * aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 	 */
 	private static final long serialVersionUID = 3612902112627409790L;
 	DefaultTableModel defaultTableModel;
@@ -131,9 +131,15 @@ public class GD_Main extends JFrame implements ActionListener {
 		mniCapNhat_NCC.setFont(new Font("Times New Roman", Font.LAYOUT_NO_LIMIT_CONTEXT, 14));
 		mniCapNhat_NCC.setIcon(new ImageIcon("src/images/refresh.png"));
 		
-		
-		mnNCC.addActionListener(new ActionListener() {
+		mniCapNhat_NCC.addActionListener(this);
+		mniCapNhat_NCC.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Object o = e.getSource();
+				if(o == mniCapNhat_NCC) {
+					  
+					 panel_NCC.setVisible(true);
+					 panel_TrangChu.setVisible(false);
+					}
 				panel_NCC.setVisible(true);
 				panel_TrangChu.setVisible(false);
 				panel_NhapBangDia.setVisible(false);
@@ -167,12 +173,17 @@ public class GD_Main extends JFrame implements ActionListener {
 		mniCapNhat_KH.setFont(new Font("Times New Roman", Font.LAYOUT_NO_LIMIT_CONTEXT, 14));
 		mniCapNhat_KH.setIcon(new ImageIcon("src/images/refresh.png"));
 		
-		mnKhachHang.addActionListener(new ActionListener() {
+		mniCapNhat_KH.addActionListener(this);
+		mniCapNhat_KH.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Object o = e.getSource();
+				if(o==mniCapNhat_KH) {
+					panel_KhachHang.setVisible(true);
+				}
 				panel_NCC.setVisible(false);
 				panel_TrangChu.setVisible(false);
 				panel_NhapBangDia.setVisible(false);
-				panel_KhachHang.setVisible(true);
+		
 				panel_BangDia.setVisible(false);
 				panel_NhanVien.setVisible(false);
 				panel_ThueBangDia.setVisible(false);
@@ -1961,12 +1972,8 @@ public class GD_Main extends JFrame implements ActionListener {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-		Object o = e.getSource();
-		if(o == mniCapNhat_NCC) {
-				 
-			
-//			 new panel_NCC.setVisible(true);
-			}
+		
+	
 			
 		}
 
