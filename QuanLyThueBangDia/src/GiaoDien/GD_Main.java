@@ -128,7 +128,7 @@ public class GD_Main extends JFrame implements ActionListener {
 		mniTimKiem_NCC.setFont(new Font("Times New Roman", Font.LAYOUT_NO_LIMIT_CONTEXT, 14));
 		mniTimKiem_NCC.setIcon(new ImageIcon("src/images/seo.png"));
 		
-		mnNCC.add(mniDanhSach_NCC = new JMenuItem(" Danh Sách "));
+		mnNCC.add(mniDanhSach_NCC = new JMenuItem(" Tạo Mới "));
 		mniDanhSach_NCC.setFont(new Font("Times New Roman", Font.LAYOUT_NO_LIMIT_CONTEXT, 14));
 		mniDanhSach_NCC.setIcon(new ImageIcon("src/images/check-list.png"));
 		
