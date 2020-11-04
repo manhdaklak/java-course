@@ -47,7 +47,7 @@ public class GD_DangNhap extends JFrame implements ActionListener{
 	}
 
 	/**
-	 * Create the frame.
+	 * sssssssCreate the frame.
 	 */
 	public GD_DangNhap() {
 		
