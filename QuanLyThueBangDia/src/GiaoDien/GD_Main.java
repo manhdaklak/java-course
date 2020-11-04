@@ -18,7 +18,7 @@ import com.toedter.calendar.JDateChooser;
 public class GD_Main extends JFrame implements ActionListener {
 	
 	/**
-	 * aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+	 * aaaaaaaaa
 	 */
 	private static final long serialVersionUID = 3612902112627409790L;
 	DefaultTableModel defaultTableModel;
@@ -165,7 +165,7 @@ public class GD_Main extends JFrame implements ActionListener {
 		mniTimKiem_KH.setFont(new Font("Times New Roman", Font.LAYOUT_NO_LIMIT_CONTEXT, 14));
 		mniTimKiem_KH.setIcon(new ImageIcon("src/images/seo.png"));
 			
-		mnKhachHang.add(mniDanhSach_KH = new JMenuItem(" Danh Sách "));
+		mnKhachHang.add(mniDanhSach_KH = new JMenuItem(" Tạo Mới "));
 		mniDanhSach_KH.setFont(new Font("Times New Roman", Font.LAYOUT_NO_LIMIT_CONTEXT, 14));
 		mniDanhSach_KH.setIcon(new ImageIcon("src/images/check-list.png"));
 		
