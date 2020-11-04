@@ -18,7 +18,7 @@ import com.toedter.calendar.JDateChooser;
 public class GD_Main extends JFrame implements ActionListener {
 	
 	/**
-	 * aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+	 * aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 	 */
 	private static final long serialVersionUID = 3612902112627409790L;
 	DefaultTableModel defaultTableModel;
